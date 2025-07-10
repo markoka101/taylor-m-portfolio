@@ -5,6 +5,7 @@ import { RootLayout } from './components/layouts/RootLayout';
 import { About } from './pages/About'; //There is no problem here, no matter what the linter is saying
 import { Contact } from './pages/Contact';
 import { Courses } from './pages/Courses';
+import { Other } from './pages/Other';
 import { Portfolio } from './pages/Portfolio';
 import { Projects } from './pages/Projects';
 
@@ -35,6 +36,10 @@ const routes: RouteObject[] = [
 					{
 						path: 'projects/:projectId',
 						element: <ProjectLayout />
+					},
+					{
+						path: 'projects/other',
+						element: <Other />
 					}
 				]
 			},

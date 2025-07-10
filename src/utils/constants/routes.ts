@@ -13,7 +13,8 @@ export const ROUTES = {
 		PROJECT_CATEGORY: (category: string) => `/portfolio/projects/category/${category}`,
 		COURSES: '/portfolio/courses',
 		COURSE_DETAIL: (slug: string) => `/portfolio/courses/${slug}`,
-		COURSE_TYPE: (type: string) => `/portfolio/courses/type/${type}`
+		COURSE_TYPE: (type: string) => `/portfolio/courses/type/${type}`,
+		OTHER: '/portfolio/other'
 	}
 } as const;
 
@@ -51,6 +52,10 @@ export const NAVIGATION_ITEMS = [
 			{
 				label: 'Courses',
 				path: ROUTES.PORTFOLIO.COURSES
+			},
+			{
+				label: 'Other',
+				path: ROUTES.PORTFOLIO.OTHER
 			}
 		]
 	},
