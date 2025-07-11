@@ -63,22 +63,14 @@
 // 	);
 // }
 
-import { AnimatePresence, motion } from 'framer-motion';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 //layout mostly used to handle dynamic nature of portfolio
 export default function PortfolioLayout() {
-	const location = useLocation();
-
 	return (
 		<div className="portfolio-container mx-auto max-w-7xl px-4 py-8">
-			<motion.header
-				className="portfolio-header mb-8"
-				initial={{ opacity: 0, y: -20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.6 }}
-			>
-				<nav className="portfolio-nav mb-8 flex justify-center space-x-6">
+			<header className="mb-8">
+				<nav className="mb-8 flex justify-center space-x-6">
 					<NavLink
 						to="/portfolio"
 						end
@@ -117,21 +109,11 @@ export default function PortfolioLayout() {
 						Projects
 					</NavLink>
 				</nav>
-			</motion.header>
+			</header>
 
 			{/* AnimatePresence moved here for page-specific transitions */}
-			<AnimatePresence mode="wait">
-				<motion.div
-					key={location.pathname}
-					className="portfolio-content"
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					exit={{ opacity: 0, y: -20 }}
-					transition={{ duration: 0.3, ease: 'easeInOut' }}
-				>
-					<Outlet />
-				</motion.div>
-			</AnimatePresence>
+
+			<Outlet />
 		</div>
 	);
 }
