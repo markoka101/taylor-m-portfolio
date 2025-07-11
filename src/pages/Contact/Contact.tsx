@@ -58,7 +58,7 @@ function Contact() {
 	};
 
 	return (
-		<section className="flex w-full flex-col items-center">
+		<section className="animate-fade-in-up flex w-full flex-col items-center">
 			<section className="bg-accent text-text mt-2 mb-20 flex h-[700px] w-full flex-col items-center justify-center text-gray-800 lg:flex-row lg:justify-between">
 				<aside className="h-full w-[450px] bg-black">
 					<h1>Image goes here</h1>

@@ -2,7 +2,7 @@ import { InstagramIcon, LinkedInLogo } from '../../components/icons';
 
 function About() {
 	return (
-		<section className="flex w-full flex-col items-center">
+		<section className="animate-fade-in-up flex w-full flex-col items-center motion-reduce:animate-none">
 			<div className="mt-2 h-[3px] w-screen bg-lime-100/70" />
 			<section className="bg-accent mt-16 mb-20 flex h-[780px] w-[92%] flex-col items-center justify-center text-gray-800 lg:flex-row lg:justify-between">
 				<main className="font-marmelad flex h-full flex-col justify-center p-2 lg:w-[60rem] lg:p-0 lg:pl-32 xl:w-[70rem] xl:pl-40">
