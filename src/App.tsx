@@ -7,7 +7,7 @@ import { Contact } from './pages/Contact';
 import { Courses } from './pages/Courses';
 import { Other } from './pages/Other';
 import { Portfolio } from './pages/Portfolio';
-import { Projects } from './pages/Projects';
+import { ProjectDetail, Projects } from './pages/Projects';
 
 /*
    As there are a lot of dynamic pages and routes 
@@ -20,7 +20,6 @@ const routes: RouteObject[] = [
 	{
 		path: '/',
 		element: <RootLayout />,
-
 		children: [
 			{ index: true, element: <About /> },
 			{
@@ -29,22 +28,16 @@ const routes: RouteObject[] = [
 				children: [
 					{ index: true, element: <Portfolio /> },
 					{ path: 'courses', element: <Courses /> },
-					{
-						path: 'projects',
-						element: <Projects />
-					},
+					{ path: 'projects', element: <Projects /> },
+					{ path: 'other', element: <Other /> }, // Fixed: moved out of projects
 					{
 						path: 'projects/:projectId',
-						element: <ProjectLayout />
-					},
-					{
-						path: 'projects/other',
-						element: <Other />
+						element: <ProjectLayout />,
+						children: [{ index: true, element: <ProjectDetail /> }]
 					}
 				]
 			},
 			{ path: 'contact', element: <Contact /> },
-			// Netlify forms thanks redirect after submit
 			{
 				path: 'success',
 				loader: () => redirect('/contact?status=thanks')
