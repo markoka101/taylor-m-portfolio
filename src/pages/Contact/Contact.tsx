@@ -122,7 +122,7 @@ function Contact() {
 						/>
 						<button
 							type="submit"
-							className="bg-text w-full cursor-pointer border p-2 text-white transition-all duration-[0.4s] ease-in-out hover:bg-white hover:text-black"
+							className="bg-text w-full cursor-pointer border p-2 text-white transition-all duration-[0.6s] ease-in-out hover:bg-white hover:text-black"
 						>
 							Send
 						</button>
