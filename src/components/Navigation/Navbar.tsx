@@ -1,6 +1,6 @@
 import type React from 'react';
 
-import MenuIcon from '../icons/MenuIcon';
+import AnimatedMenuIcon from '../icons/AnimatedMenuIcon';
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
 
@@ -17,11 +17,11 @@ function Navbar({ isOpen, setIsOpen }: NavbarProps) {
 			<MobileNav isOpen={isOpen} setIsOpen={setIsOpen} />
 			<button
 				className="fixed top-4 right-4 z-40 cursor-pointer rounded bg-transparent p-2 lg:hidden"
-				aria-label="Open mobile menu"
+				aria-label={isOpen ? 'Close mobile menu' : 'Open mobile menu'}
 				onClick={() => setIsOpen(!isOpen)}
 				type="button"
 			>
-				<MenuIcon className={`animate-menuicon text-text m-0`} />
+				<AnimatedMenuIcon className="animate-menuicon text-text m-0" isOpen={isOpen} />
 			</button>
 		</nav>
 	);
